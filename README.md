@@ -1,25 +1,27 @@
-Le robot est piloté par une carte NUCLEO-L476RG et comporte les composants suivants :
+Robot Controlled by NUCLEO-L476RG Board
 
-- Sonar : Pour détecter les obstacles et guider l’évitement.
-- Servomoteurs : Quatre servos assurent la mobilité des "chevilles" gauche et droite.
-- Module Bluetooth : Permet de contrôler le robot à distance.
+The robot is controlled by a NUCLEO-L476RG board and includes the following components:
 
-Voici les objectifs principaux du projet :
+- Sonar: Used to detect obstacles and guide evasion.
+- Servomotors: Four servos control the movement of the left and right "ankles."
+- Bluetooth Module: Enables remote control of the robot.
+- 
+Main Objectives of the Project
 
-1) Contrôle par Bluetooth : Le robot peut avancer, reculer, aller à gauche et à droite.
-2)Vitesse Fixe : La vitesse du robot est réglée à 20 cm/s.
-3) Évitement d'Obstacles : Le robot utilise un sonar pour détecter les obstacles, adapte sa trajectoire en fonction de l'angle d'impact, et longe les obstacles.
-4) Arrêt d'Urgence : Un bouton permet d’arrêter ou démarrer le robot à tout moment pour des raisons de sécurité.
-5) Vérification du Niveau de Batterie : Une LED s’allume si la tension de la carte de contrôle tombe sous 3V.
-6) Debugging via UART : Des messages de débogage sont envoyés pour surveiller l’état du robot.
+1) Bluetooth Control: The robot can move forward, backward, turn left, and turn right.
+2) Fixed Speed: The robot operates at a constant speed of 20 cm/s.
+3) Obstacle Avoidance: The robot uses the sonar to detect obstacles, adjusts its trajectory based on the angle of impact, and follows obstacles.
+4) Emergency Stop: A button allows the robot to be stopped or started at any time for safety.
+5) Battery Level Check: A LED lights up if the control board’s voltage drops below 3V.
+6) Debugging via UART: Debugging messages are sent to monitor the robot’s status.
 
-Fonctionnement Général
+General Operation
 
-Après une phase d’initialisation, le robot entre dans une boucle infinie, dans laquelle il :
+After initialization, the robot enters an infinite loop where it:
 
-- Active/Désactive les Roues : En fonction de l'état du bouton B1 (arrêt d’urgence).
-- Détecte et Évite les Obstacles : En continue, le sonar détecte les obstacles et une fonction ajuste la trajectoire.
-- Réagit aux Interruptions : Pour le contrôle par Bluetooth.
-- Vérifie la Batterie : Une surveillance de la tension est effectuée en permanence. En dessous de 3V, une LED est activée pour signaler un niveau critique.
+- Activates/Deactivates the Wheels: Based on the state of the emergency stop button (B1).
+- Detects and Avoids Obstacles: Continuously, the sonar detects obstacles and a function adjusts the robot's path.
+- Responds to Interruptions: For Bluetooth control.
+- Monitors Battery: Voltage is constantly monitored, and if it drops below 3V, a LED signals the low battery.
 
-Ce système assure une navigation autonome et un contrôle sécurisé du robot, avec un retour d’information pour un diagnostic efficace.
+This system ensures autonomous navigation, secure control of the robot, and effective diagnostic feedback.
